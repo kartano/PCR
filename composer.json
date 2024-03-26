@@ -1,0 +1,70 @@
+{
+    "name": "kartano/pcr",
+    "description": "Patient Care Record System",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Mitchell",
+            "email": "kartano@gmail.com",
+            "homepage": "https://www.linkedin.com/in/simon-mitchell-76512352/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "kartano@gmail.com",
+        "source": "https://github.com/kartano/pcr",
+        
+    },
+    "keywords": [
+        "pcr",
+        "sunsetcoders"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "laminas/laminas-mvc": "^3.7",
+        "php": "^8.3",
+        "ext-openssl": "*",
+        "ext-intl": "*",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "ext-ldap": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
+    },
+    "extra": [],
+    "scripts": {
+        "coverage": "XDEBUG_MODE=coverage phpunit --coverage-html ./htdocs/coverage/php",
+        "cs-check": "phpcs -sp",
+        "cs-fix": "phpcbf",
+        "stan": "phpstan analyze --memory-limit=1G",
+        "stan-debug": "phpstan analyze --debug --memory-limit=1G",
+        "stan-clear": "phpstan clear-result-cache",
+        "test": "phpunit"
+    },
+    "scripts-descriptions": {
+        "coverage": "Prepare a coverage report for PHPUnit tests",
+        "cs-check": "Perform a CodeSniffer check for PSR violations",
+        "cs-fix": "Automatically fix any PSR violations",
+        "stan": "Perform a PHPStan code standards analysis",
+        "stan-debug": "Perform a PHPStan code standards analysus with debug information",
+        "stan-clear": "Clear any cached data in PHPStan",
+        "test": "Run PHPUnit tests"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1",
+        "phpunit/phpunit": "^10.5",
+        "squizlabs/php_codesniffer": "^3.9",
+        "laminas/laminas-test": "^4.10"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}
