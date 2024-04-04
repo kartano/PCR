@@ -1,0 +1,48 @@
+volumes:
+  log:
+  ssh:
+    external: true
+  sshd_config:
+
+services:
+  cli:
+    build:
+      context: ./
+      dockerfile: build/docker/compose/cli/Dockerfile
+      pull: true
+    restart: "on-failure"
+    environment:
+      APPLICATION_ENV: $APPLICATION_ENV
+      DEVELOPER_ENV: $DEVELOPER_ENV
+    volumes:
+      - "./:/srv/www"
+      - "log:/var/log/"
+      - "ssh:/root/.ssh"
+      - "sshd_config:/etc/ssh"
+    ports:
+      - "8100:22"
+    networks:
+      - shared
+
+  web:
+    build:
+      context: ./
+      dockerfile: build/docker/compose/web/Dockerfile
+      pull: true
+    restart: "on-failure"
+    environment:
+      APPLICATION_ENV: $APPLICATION_ENV
+      DEVELOPER_ENV: $DEVELOPER_ENV
+    volumes:
+      - "./:/srv/www"
+      - "./build/docker/apache.conf:/etc/apache2/conf-enabled/pcr_dev.conf"
+      - "log:/var/log/"
+    ports:
+      - "8180:80"
+    networks:
+      - shared
+
+networks:
+  shared:
+    external: true
+    name: shared
