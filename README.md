@@ -82,4 +82,4 @@ composer test
 
 ## License <a name="License"></a>
 
-* MIT License - see the [LICENSE](LICENSE.md) file for details
+MIT License - see the [LICENSE](LICENSE.md) file for details
