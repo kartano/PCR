@@ -16,7 +16,7 @@ services:
       APPLICATION_ENV: $APPLICATION_ENV
       DEVELOPER_ENV: $DEVELOPER_ENV
     volumes:
-      - "./:/srv/www"
+      - "./:/var/www"
       - "log:/var/log/"
       - "ssh:/root/.ssh"
       - "sshd_config:/etc/ssh"
