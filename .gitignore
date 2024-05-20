@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
-vendor/*
 .phpunit.result.cache
+env.txt
 junit-ember.xml
+vendor/*
