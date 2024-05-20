@@ -3,12 +3,13 @@ volumes:
   ssh:
     external: true
   sshd_config:
+  data_dir:
 
 services:
   cli:
     build:
       context: ./
-      dockerfile: build/docker/compose/cli/Dockerfile
+      dockerfile: build/docker/compose/web/Dockerfile
       pull: true
     restart: "on-failure"
     environment:
@@ -20,25 +21,28 @@ services:
       - "ssh:/root/.ssh"
       - "sshd_config:/etc/ssh"
     ports:
-      - "8100:22"
+      - "443:443"
+      - "9122:22"
+      - "9137:9137"
+      - "9138:80"
     networks:
       - shared
 
-  web:
+  mysql:
     build:
       context: ./
-      dockerfile: build/docker/compose/web/Dockerfile
+      dockerfile: build/docker/compose/mysql/Dockerfile
       pull: true
-    restart: "on-failure"
+    restart: always
     environment:
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       APPLICATION_ENV: $APPLICATION_ENV
       DEVELOPER_ENV: $DEVELOPER_ENV
+      TZ: "MST"
     volumes:
-      - "./:/srv/www"
-      - "./build/docker/apache.conf:/etc/apache2/conf-enabled/pcr_dev.conf"
-      - "log:/var/log/"
+      - "data_dir:/var/lib/mysql"
     ports:
-      - "8180:80"
+      - 127.0.0.1:3306:3306
     networks:
       - shared
 

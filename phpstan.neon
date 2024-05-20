@@ -1,0 +1,20 @@
+parameters:
+    level: 6
+    treatPhpDocTypesAsCertain: false
+    tipsOfTheDay: false
+    bootstrapFiles:
+        -
+    dynamicConstantNames:
+        - APPLICATION_ENV
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        - identifier: missingType.iterableValue
+        - identifier: missingType.generics
+    universalObjectCratesClasses:
+        - Laminas\Db\RowGateway\RowGatewayInterface
+    fileExtensions:
+        - php
+    paths:
+        -
+    excludePaths:
+        -

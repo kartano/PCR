@@ -1,6 +1,8 @@
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)
 ![PHP](https://badgen.net/badge/php/8.3/green?icon=php)
+![MySQL](https://badgen.net/badge/mysql/8.0/green?icon=php)
+![MySQL](https://badgen.net/badge/laminas/3.7/orange)
 
 # PCR
 
@@ -10,7 +12,8 @@
 4. [Development](#Development)
    1. [Code Standards](#Code_Standards)
    2. [Pushing Changes](#Pushing_Changes)
-5. [License](#License)
+5. [Troubleshooting](#Troubleshooting)
+6. [License](#License)
 
 ## Synopsis <a name="Synopsis"></a>
 
@@ -26,10 +29,10 @@ The expected user base would include small first-aid companies, school nurses, f
 
 1. If you are using Windows:
    1. Run `appwiz.cpl` and select "Turn Windows features on or off".  Select the following:
-   * Hyper-V
-   * Virtual Machine Platform
-   * Windows Hypervisor Platform
-   * Windows Subsystem for Linux
+      * Hyper-V
+      * Virtual Machine Platform
+      * Windows Hypervisor Platform
+      * Windows Subsystem for Linux
    2. Set the default version to Debian: `wsl.exe --set-default-version debian`
 2. Clone the code base.
 3. Find and fix any "FIXME" items within the source code.
@@ -38,6 +41,7 @@ The expected user base would include small first-aid companies, school nurses, f
 ```
 APPLICATION_ENV=local
 DEVELOPER_ENV=your_user_name_here
+MYSQL_ROOT_PASSWORD=your_local_dev_mysql_root_password
 ```
 5. Build and spool the Docker containers:
 ```bash
@@ -79,6 +83,10 @@ composer cs-check
 composer stan
 composer test
 ```
+
+## Troubleshooting <a name="Troubleshooting"></a>
+
+TBD
 
 ## License <a name="License"></a>
 

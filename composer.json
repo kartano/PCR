@@ -23,6 +23,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
+        "doctrine/migrations": "^3.7",
         "laminas/laminas-mvc": "^3.7",
         "php": "^8.3",
         "ext-openssl": "*",
