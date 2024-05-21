@@ -68,7 +68,9 @@ RUN curl -L -o /tmp/rarlinux-x64-621.tar.gz https://www.win-rar.com/fileadmin/wi
 ########################################################################################################################
 
 # Global packages
-RUN apt-get update -y && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libldap2-dev libxml2-dev libicu-dev zlib1g-dev libpng-dev libmemcached-dev libzip-dev libc-client-dev libkrb5-dev libxslt1-dev libpspell-dev libonig-dev zip unzip
+RUN apt-get update -y && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libldap2-dev libxml2-dev \
+    libicu-dev zlib1g-dev libpng-dev libmemcached-dev libzip-dev libc-client-dev libkrb5-dev libxslt1-dev libpspell-dev \
+    libonig-dev zip unzip
 
 RUN pecl install memcached
 
@@ -90,11 +92,6 @@ RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ && docker-
 
 # Install MYSQLI
 RUN docker-php-ext-install mysqli
-
-# Install support for *Nix System V semaphores
-RUN docker-php-ext-install sysvmsg
-RUN docker-php-ext-install sysvsem
-RUN docker-php-ext-install sysvshm
 
 # Session library
 RUN docker-php-ext-install session
