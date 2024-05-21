@@ -42,7 +42,7 @@ services:
     volumes:
       - "data_dir:/var/lib/mysql"
     ports:
-      - 127.0.0.1:3306:3306
+      - 127.0.0.1:9106:9106
     networks:
       - shared
 
