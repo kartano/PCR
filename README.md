@@ -1,4 +1,6 @@
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](UNLICENSE)
+[![GitHub release](https://img.shields.io/github/release/kartano/pcr.svg?logo=github)](https://github.com/kartano/pcr/releases/latest)
 ![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)
 ![PHP](https://badgen.net/badge/php/8.3/green?icon=php)
 ![MySQL](https://badgen.net/badge/mysql/8.0/green?icon=php)
