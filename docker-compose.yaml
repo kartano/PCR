@@ -9,7 +9,7 @@ services:
   cli:
     build:
       context: ./
-      dockerfile: build/docker/compose/web/Dockerfile
+      dockerfile: build/docker/compose/cli/Dockerfile
       pull: true
     restart: "on-failure"
     environment:
