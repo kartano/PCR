@@ -1,0 +1,6 @@
+# https://docs.docker.com/desktop/synchronized-file-sharing/#use-syncignore
+.git*
+*.md
+.idea
+.phpunit.cache
+vendor
